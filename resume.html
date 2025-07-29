@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <style>
+        /* Стилизация фона */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #051824; /* Цвет фона */
+            color: #d1d5db; /* Общий цвет текста */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Убираем скролл на странице */
+        }
+
+        /* Стилизация карточки */
+        .karta {
+            background-color: #162936; /* Цвет карточки */
+            width: 80%; /* Ширина карточки */
+            max-width: 600px; /* Максимальная ширина */
+            padding: 20px; /* Внутренние отступы */
+            border-radius: 15px; /* Закругление углов */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Тень для объема */
+            text-align: left; /* Выравнивание текста по левому краю */
+            overflow-y: auto; /* Автоматическая полоса прокрутки */
+            max-height: 90vh; /* Ограничение высоты карточки */
+            -webkit-overflow-scrolling: touch; /* Плавная прокрутка на мобильных устройствах */
+        }
+
+        /* Стилизация полосы прокрутки */
+        .karta::-webkit-scrollbar {
+            width: 8px; /* Ширина полосы прокрутки */
+        }
+
+        .karta::-webkit-scrollbar-track {
+            background: #162936; /* Цвет фона трека */
+        }
+
+        .karta::-webkit-scrollbar-thumb {
+            background: #27c9b5; /* Цвет бегунка */
+            border-radius: 10px; /* Закругление бегунка */
+        }
+
+        .karta::-webkit-scrollbar-thumb:hover {
+            background: #1abc9c; /* Цвет бегунка при наведении */
+        }
+
+        /* Стиль заголовка */
+        .karta h1 {
+            margin: 0 0 10px;
+            font-size: 1.8rem;
+            color: #d1d5db; /* Белый цвет текста */
+            text-align: center; /* Центрируем имя */
+        }
+
+        /* Стиль подзаголовка */
+        .karta h2 {
+            margin: 15px 0 10px;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #27c9b5; /* Акцентный цвет текста */
+        }
+
+        .karta h3 {
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+            color: #27c9b5; /* Акцентный цвет текста */
+        }
+
+        /* Стиль параграфов */
+        .karta p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        /* Стилизация списков */
+        .karta ul {
+            list-style-type: none; /* Убираем стандартные маркеры */
+            padding-left: 20px; /* Отступ слева для текста */
+            margin: 0 0 15px;
+        }
+
+        /* Стиль каждого элемента списка */
+        .karta ul li {
+            position: relative; /* Для позиционирования маркера */
+            padding-left: 15px; /* Отступ слева для текста */
+            margin-bottom: 5px; /* Расстояние между элементами */
+        }
+
+        /* Добавляем короткую полоску как маркер */
+        .karta ul li::before {
+            content: ""; /* Создаем псевдоэлемент */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px; /* Длина полоски */
+            height: 2px; /* Толщина полоски */
+            background-color: #27c9b5; /* Цвет полоски */
+        }
+
+        /* Стиль горизонтальной линии */
+        hr {
+            border: none;
+            border-top: 1px solid #27c9b5; /* Акцентный цвет для линии */
+            margin: 20px 0;
+        }
+
+        /* Стиль контактной информации */
+        .karta .contact-info {
+            font-size: 0.9rem;
+            color: #aeb7c0; /* Серый цвет текста */
+            text-align: center;
+        }
+
+        /* Скрыть линии после всех заголовков, кроме первого и последнего */
+        .karta h2:not(:first-of-type):not(:last-of-type) + hr {
+            display: none;
+        }
+
+        /* Стилизация кнопки */
+        button {
+            display: inline-block;
+            padding: 10px 20px; /* Внутренние отступы */
+            font-size: 1rem; /* Размер текста */
+            font-weight: bold; /* Жирный текст */
+            color: #ffffff; /* Цвет текста */
+            background-color: #27c9b5; /* Цвет фона */
+            border: none; /* Убираем границу */
+            border-radius: 5px; /* Закругление углов */
+            cursor: pointer; /* Курсор в виде руки */
+            transition: all 0.3s ease; /* Плавные переходы */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+            text-transform: uppercase; /* Верхний регистр */
+        }
+
+        /* Эффект при наведении */
+        button:hover {
+            background-color: #1abc9c; /* Изменение цвета фона */
+            transform: translateY(-2px); /* Приподнимаем кнопку */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
+        }
+
+        /* Эффект при нажатии */
+        button:active {
+            background-color: #16a085; /* Темнее цвет фона */
+            transform: translateY(0); /* Опускаем кнопку */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшаем тень */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Карточка с информацией -->
+        <div class="karta">
+            <h1>Сергеев Даниил</h1>
+            <h2>Junior Frontend Developer</h2>
+            <hr>
+
+            <h3>О себе:</h3>
+            <p>
+                Мне 22 года, я начинающий Frontend разработчик. Имею базовое понимание backend разработки, но в основном занимался frontend частью.
+                Есть опыт руководства командой разработчиков, также опыт работы с дизайнерами и backend-разработчиками. Легко адаптируюсь, быстро обучаюсь, не конфликтен и умею грамотно распределять свое время.
+            </p>
+
+            <h3>Портфолио:</h3>
+            <button onclick="location.href='https://github.com/Kagiwara'">Портфолио</button>
+
+            <h3>Навыки и софт:</h3>
+            <ul>
+                <li>Работа с нейросетями</li>
+                <li>Самодисциплина</li>
+                <li>Figma</li>
+                <li>VS Code</li>
+            </ul>
+
+            <h3>Языки программирования:</h3>
+            <ul>
+                <li>JavaScript</li>
+                <li>HTML (язык разметки)</li>
+                <li>CSS</li>
+            </ul>
+
+            <h3>Библиотеки и фреймворки:</h3>
+            <ul>
+                <li>Bootstrap</li>
+                <li>Mongoose</li>
+                <li>Node.js</li>
+            </ul>
+
+            <h3>Базы данных:</h3>
+            <p>MongoDB</p>
+
+            <h3>Образование:</h3>
+            <p>Брянский государственный инженерно-технологический университет, специальность "Информационные системы и технологии", год окончания: 2025.</p>
+
+            <hr>
+            <div class="contact-info">
+                Email: sergeew.dan2016@yandex.ru | Телефон: +7 (930) 828-43-20 <br> Telegram: @Kagiwara | GitHub: <a href="https://github.com/Kagiwara" style="color: #27c9b5;">github.com/Kagiwara</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
