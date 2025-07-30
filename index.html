@@ -10,52 +10,52 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #051824; /* Цвет фона */
-            color: #d1d5db; /* Общий цвет текста */
+            background-color: #051824; 
+            color: #d1d5db;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Убираем скролл на странице */
+            overflow: hidden;
         }
 
         /* Стилизация карточки */
         .karta {
-            background-color: #162936; /* Цвет карточки */
-            width: 80%; /* Ширина карточки */
-            max-width: 600px; /* Максимальная ширина */
-            padding: 20px; /* Внутренние отступы */
-            border-radius: 15px; /* Закругление углов */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Тень для объема */
-            text-align: left; /* Выравнивание текста по левому краю */
-            overflow-y: auto; /* Автоматическая полоса прокрутки */
-            max-height: 90vh; /* Ограничение высоты карточки */
-            -webkit-overflow-scrolling: touch; /* Плавная прокрутка на мобильных устройствах */
+            background-color: #162936; 
+            width: 80%; 
+            max-width: 600px; 
+            padding: 20px;
+            border-radius: 15px; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+            text-align: left; 
+            overflow-y: auto; 
+            max-height: 90vh; 
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* Стилизация полосы прокрутки */
+       
         .karta::-webkit-scrollbar {
-            width: 8px; /* Ширина полосы прокрутки */
+            width: 8px; 
         }
 
         .karta::-webkit-scrollbar-track {
-            background: #162936; /* Цвет фона трека */
+            background: #162936; 
         }
 
         .karta::-webkit-scrollbar-thumb {
-            background: #27c9b5; /* Цвет бегунка */
-            border-radius: 10px; /* Закругление бегунка */
+            background: #27c9b5; 
+            border-radius: 10px;
         }
 
         .karta::-webkit-scrollbar-thumb:hover {
-            background: #1abc9c; /* Цвет бегунка при наведении */
+            background: #1abc9c; 
         }
 
         /* Стиль заголовков */
         .karta h1, .karta h2, .karta h3 {
             margin: 15px 0 10px;
             font-size: 1.2rem;
-            color: #27c9b5; /* Акцентный цвет текста */
+            color: #27c9b5;
         }
 
         /* Стиль параграфов */
@@ -67,65 +67,65 @@
 
         /* Стилизация списков */
         .karta ul {
-            list-style-type: none; /* Убираем стандартные маркеры */
-            padding-left: 20px; /* Отступ слева для текста */
+            list-style-type: none; 
+            padding-left: 20px; 
             margin: 0 0 15px;
         }
 
         /* Стиль каждого элемента списка */
         .karta ul li {
-            position: relative; /* Для позиционирования маркера */
-            padding-left: 15px; /* Отступ слева для текста */
-            margin-bottom: 5px; /* Расстояние между элементами */
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px; 
         }
 
         /* Добавляем короткую полоску как маркер */
         .karta ul li::before {
-            content: ""; /* Создаем псевдоэлемент */
+            content: ""; 
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 8px; /* Длина полоски */
-            height: 2px; /* Толщина полоски */
-            background-color: #27c9b5; /* Цвет полоски */
+            width: 8px;
+            height: 2px; 
+            background-color: #27c9b5;
         }
 
         /* Стиль горизонтальной линии */
         hr {
             border: none;
-            border-top: 1px solid #27c9b5; /* Акцентный цвет для линии */
+            border-top: 1px solid #27c9b5; 
             margin: 20px 0;
         }
 
         /* Стилизация кнопки */
         button {
             display: inline-block;
-            padding: 10px 20px; /* Внутренние отступы */
-            font-size: 1rem; /* Размер текста */
-            font-weight: bold; /* Жирный текст */
-            color: #ffffff; /* Цвет текста */
-            background-color: #27c9b5; /* Цвет фона */
-            border: none; /* Убираем границу */
-            border-radius: 5px; /* Закругление углов */
-            cursor: pointer; /* Курсор в виде руки */
-            transition: all 0.3s ease; /* Плавные переходы */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
-            text-transform: uppercase; /* Верхний регистр */
+            padding: 10px 20px; 
+            font-size: 1rem;
+            font-weight: bold; 
+            color: #ffffff;
+            background-color: #27c9b5; 
+            border: none; 
+            border-radius: 5px;
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+            text-transform: uppercase; 
         }
 
         /* Эффект при наведении */
         button:hover {
-            background-color: #1abc9c; /* Изменение цвета фона */
-            transform: translateY(-2px); /* Приподнимаем кнопку */
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
+            background-color: #1abc9c;
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); 
         }
 
         /* Эффект при нажатии */
         button:active {
-            background-color: #16a085; /* Темнее цвет фона */
-            transform: translateY(0); /* Опускаем кнопку */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшаем тень */
+            background-color: #16a085;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Стиль ссылок */
